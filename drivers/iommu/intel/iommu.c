@@ -3423,6 +3423,9 @@ static int __init init_dmars(void)
 	if (!dmar_map_ipu)
 		iommu_identity_mapping |= IDENTMAP_IPU;
 
+	if (!dmar_map_ipts)
+		iommu_identity_mapping |= IDENTMAP_IPTS;
+
 	check_tylersburg_isoch();
 
 	ret = si_domain_init(hw_pass_through);
